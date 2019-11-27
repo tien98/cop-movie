@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\body-bg.gif" />
+    <None Include="wwwroot\Images\coming-soon1.jpg" />
+    <None Include="wwwroot\Images\coming-soon2.jpg" />
+    <None Include="wwwroot\Images\comments.gif" />
+    <None Include="wwwroot\Images\favicon.ico" />
+    <None Include="wwwroot\Images\image-hover.png" />
+    <None Include="wwwroot\Images\logo.gif" />
+    <None Include="wwwroot\Images\movie1.jpg" />
+    <None Include="wwwroot\Images\movie10.jpg" />
+    <None Include="wwwroot\Images\movie11.jpg" />
+    <None Include="wwwroot\Images\movie12.jpg" />
+    <None Include="wwwroot\Images\movie13.jpg" />
+    <None Include="wwwroot\Images\movie14.jpg" />
+    <None Include="wwwroot\Images\movie15.jpg" />
+    <None Include="wwwroot\Images\movie16.jpg" />
+    <None Include="wwwroot\Images\movie17.jpg" />
+    <None Include="wwwroot\Images\movie18.jpg" />
+    <None Include="wwwroot\Images\movie2.jpg" />
+    <None Include="wwwroot\Images\movie3.jpg" />
+    <None Include="wwwroot\Images\movie4.jpg" />
+    <None Include="wwwroot\Images\movie5.jpg" />
+    <None Include="wwwroot\Images\movie6.jpg" />
+    <None Include="wwwroot\Images\movie7.jpg" />
+    <None Include="wwwroot\Images\movie8.jpg" />
+    <None Include="wwwroot\Images\movie9.jpg" />
+    <None Include="wwwroot\Images\social.gif" />
+    <None Include="wwwroot\Images\stars.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>

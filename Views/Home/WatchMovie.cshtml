@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "WatchMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div id="main">
+    <!-- Content -->
+    <div id="content">
+        <div class="box">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>XEM PHIM/PHIM HÀNH ĐỘNG/PHIM CHÍNH KỊCH/X-MAN</h3>
+                    <video controls playsinline poster="~/Images/movie1.jpg" id="player" style="width: 100%;">
+                        <!-- Video files -->
+                        <source src="~/movie/X-MEN- DARK PHOENIX Trailer 2 (2019).mp4" type="video/mp4"
+                                size="576">
+                        <source src="~/movie/X-MEN- DARK PHOENIX Trailer 2 (2019).mp4" type="video/mp4"
+                                size="720">
+                        <source src="~/movie/X-MEN- DARK PHOENIX Trailer 2 (2019).mp4" type="video/mp4"
+                                size="1080">
+                        <source src="~/movie/X-MEN- DARK PHOENIX Trailer 2 (2019).mp4" type="video/mp4"
+                                size="1440">
+
+                        <!-- Caption files -->
+                        <track kind="captions" label="English" srclang="en"
+                               src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default>
+                        <track kind="captions" label="Français" srclang="fr"
+                               src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+
+                        <!-- Fallback for browsers that don't support the <video> element -->
+                        <a href="~/movie/X-MEN- DARK PHOENIX Trailer 2 (2019).mp4" download>Download</a>
+                    </video>
+                    <div >
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Content -->
+</div>
+

@@ -1,0 +1,17 @@
+﻿@model web.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <p>Thanks for registering, </p>@Model.Name !
+<a asp-action="StudentList">List student</a>
+</body>
+</html>

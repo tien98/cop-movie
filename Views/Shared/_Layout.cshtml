@@ -1,0 +1,140 @@
+﻿@model IEnumerable<Category>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" />
+    @*<link rel="stylesheet" href="~/css/ie6.css" type="text/css" />*@
+    <script type="text/javascript" src="~/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="~/js/jquery-func.js"></script>
+</head>
+<body>
+    <div id="shell">
+        <!-- Header -->
+        <div id="header">
+            <h1 id="logo">
+                <a style="color:white; text-decoration: none;" asp-area="" asp-controller="Home" asp-action="Index">
+                <img style="width:50px; height:auto;" src="~/Images/logo.png" alt="Movie" /> Movie
+                 </a>
+            </h1>
+            <div class="social">
+                <span>FOLLOW US ON:</span>
+                <ul>
+                    <li><a class="twitter" href="#">twitte</a></li>
+                    <li><a class="facebook" href="#">facebook</a></li>
+                    <li><a class="vimeo" href="#">vimeo</a></li>
+                    <li><a class="rss" href="#">rss</a></li>
+                </ul>
+            </div>
+            <!-- Navigation -->
+            <div id="navigation">
+                <ul>
+                    <li><a class="active" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a class="" asp-area=""  asp-action="News">News</a></li>
+                    <li><a class="" asp-area="" asp-action="About">About</a></li>
+                    <li><a class="" asp-area=""  asp-action="Contact">Contact</a></li>
+                </ul>
+            </div>
+            <!-- end Navigation -->
+            <!-- Sub-menu -->
+            <div id="sub-navigation">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                    <li>
+                        <a href="#">@item.name</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Kinh Dị</a></li>
+                            <li><a href="#">Hài Hước</a></li>
+                        </ul>
+                    </li>
+                    }
+                </ul>
+                <div id="search">
+                    <form action="home_submit" method="get" accept-charset="utf-8">
+                        <label for="search-field">SEARCH</label>
+                        <input type="text" name="search field" value="Enter search here" id="search-field" title="Enter search here" class="blink search-field" />
+                        <input type="submit" value="GO!" class="search-button" />
+                    </form>
+                </div>
+            </div>
+            <!-- end Sub-Menu -->
+        </div>
+        <div id="main">
+            @RenderBody()
+            <!-- NEWS -->
+            <div id="news">
+                <div class="head">
+                    <h3>NEWS</h3>
+                    <p class="text-right"><a href="#">See all</a></p>
+                </div>
+
+                <div class="content">
+                    <p class="date">12.04.09</p>
+                    <h4>Disney's A Christmas Carol</h4>
+                    <p>&quot;Disney's A Christmas Carol,&quot; a multi-sensory thrill ride re-envisioned by Academy Award&reg;-winning filmmaker Robert Zemeckis, captures... </p>
+                    <a href="#">Read more</a>
+                </div>
+                <div class="content">
+                    <p class="date">11.04.09</p>
+                    <h4>Where the Wild Things Are</h4>
+                    <p>Innovative director Spike Jonze collaborates with celebrated author Maurice Sendak to bring one of the most beloved books of all time to the big screen in &quot;Where the Wild Things Are,&quot;...</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div class="content">
+                    <p class="date">10.04.09</p>
+                    <h4>The Box</h4>
+                    <p>Norma and Arthur Lewis are a suburban couple with a young child who receive an anonymous gift bearing fatal and irrevocable consequences.</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <!-- end NEWS -->
+            <!-- Coming -->
+            <div id="coming">
+                <div class="head">
+                    <h3>COMING SOON<strong>!</strong></h3>
+                    <p class="text-right"><a href="#">See all</a></p>
+                </div>
+                <div class="content">
+                    <h4>The Princess and the Frog </h4>
+                    <a href="#"><img src="~/Images/coming-soon1.jpg" alt="coming soon" /></a>
+                    <p>Walt Disney Animation Studios presents the musical "The Princess and the Frog," an animated comedy set in the great city of New Orleans...</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div class="cl">&nbsp;</div>
+                <div class="content">
+                    <h4>The Princess and the Frog </h4>
+                    <a href="#"><img src="~/Images/coming-soon2.jpg" alt="coming soon" /></a>
+                    <p>Walt Disney Animation Studios presents the musical "The Princess and the Frog," an animated comedy set in the great city of New Orleans...</p>
+                    <a href="#">Read more</a>
+                </div>
+
+            </div>
+            <!-- end Coming -->
+            <div class="cl">&nbsp;</div>
+            <!-- Footer -->
+        </div>
+    
+        <div id="footer">
+            <p>
+                <a href="#">HOME</a> <span>|</span>
+                <a href="#">NEWS</a> <span>|</span>
+                <a href="#">COMING SOON </a> <span>|</span>
+                <a href="#">LATERS TRAILERS</a> <span>|</span>
+                <a href="#">TOP RATED TRAILERS</a> <span>|</span>
+                <a href="#">CONTACT </a>
+            </p>
+            <p>  &copy; @DateTime.Now.Year Group 16</p>
+        </div>
+    </div>
+    <!-- end Footer -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
