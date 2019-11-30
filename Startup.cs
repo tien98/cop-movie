@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using web.Models;
+using web.Repository;
 
 namespace web
 {
@@ -26,6 +27,7 @@ namespace web
         {
             services.AddDbContext<WebContext>(options =>
                       options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IGenress, GenresRepository>();
             services.AddControllersWithViews();
         }
 

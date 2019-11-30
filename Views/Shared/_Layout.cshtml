@@ -1,4 +1,10 @@
-﻿
+﻿@{
+    var theloai = ViewData["Theloai"] as IEnumerable<Genress>;
+    var quocgia = ViewData["quocgia"] as IEnumerable<Genress>;
+    var phimle = ViewData["phimle"] as IEnumerable<Genress>;
+    var phimbo = ViewData["phimbo"] as IEnumerable<Genress>;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +24,8 @@
         <div id="header">
             <h1 id="logo">
                 <a style="color:white; text-decoration: none;" asp-area="" asp-controller="Home" asp-action="Index">
-                <img style="width:50px; height:auto;" src="~/Images/logo.png" alt="Movie" /> Movie
-                 </a>
+                    <img style="width:50px; height:auto;" src="~/Images/logo.png" alt="Movie" /> Movie
+                </a>
             </h1>
             <div class="social">
                 <span>FOLLOW US ON:</span>
@@ -34,9 +40,9 @@
             <div id="navigation">
                 <ul>
                     <li><a class="active" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a class="" asp-area=""  asp-action="News">News</a></li>
+                    <li><a class="" asp-area="" asp-action="News">News</a></li>
                     <li><a class="" asp-area="" asp-action="About">About</a></li>
-                    <li><a class="" asp-area=""  asp-action="Contact">Contact</a></li>
+                    <li><a class="" asp-area="" asp-action="Contact">Contact</a></li>
                 </ul>
             </div>
             <!-- end Navigation -->
@@ -44,13 +50,44 @@
             <div id="sub-navigation">
                 <ul>
                     <li>
-                        <a href="#">The Loai</a>
+                        <a href="#">Thể Loại</a>
                         <ul class="sub-menu">
-                            <li><a href="#">Kinh Dị</a></li>
-                            <li><a href="#">Hài Hước</a></li>
+                            @foreach (var item in theloai)
+                            {
+                                <li><a href="#">@item.gen_title</a></li>
+                            }
                         </ul>
                     </li>
-         
+                    <li>
+                        <a href="#">Quốc Gia</a>
+                        <ul class="sub-menu">
+                            @foreach (var item in quocgia)
+                            {
+                                <li><a href="#">@item.gen_title</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Phim Lẻ</a>
+                        <ul class="sub-menu">
+                            @foreach (var item in phimle)
+                            {
+                                <li><a href="#">@item.gen_title</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Phim Bộ</a>
+                        <ul class="sub-menu">
+                            @foreach (var item in phimbo)
+                            {
+                                <li><a href="#">@item.gen_title</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Anime</a>
+                    </li>
                 </ul>
                 <div id="search">
                     <form action="home_submit" method="get" accept-charset="utf-8">
@@ -116,7 +153,7 @@
             <div class="cl">&nbsp;</div>
             <!-- Footer -->
         </div>
-    
+
         <div id="footer">
             <p>
                 <a href="#">HOME</a> <span>|</span>

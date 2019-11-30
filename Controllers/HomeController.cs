@@ -6,20 +6,36 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using web.Models;
+using web.Repository;
 
 namespace web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        //private IGenress genRepo;
+        private readonly WebContext _context;
+        public HomeController(WebContext context)
         {
-            _logger = logger;
+            this._context = context;
         }
-
         public IActionResult Index()
         {
+            var list_genres1 = from e in _context.Genresses
+                              where e.gen_cate == 1
+                              select e;
+            var list_genres2 = from e in _context.Genresses
+                               where e.gen_cate == 2
+                               select e;
+            var list_genres3 = from e in _context.Genresses
+                               where e.gen_cate == 3
+                               select e;
+            var list_genres4 = from e in _context.Genresses
+                               where e.gen_cate == 4
+                               select e;
+            ViewData["theloai"] = list_genres1;
+            ViewData["quocgia"] = list_genres2;
+            ViewData["phimle"] = list_genres3;
+            ViewData["phimbo"] = list_genres4; 
             return View();
         }
         public IActionResult News()
@@ -57,23 +73,23 @@ namespace web.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult Register(Student student)
-        {
-            if (ModelState.IsValid)
-            {
-                Repository.AddStudent(student);
-                return View("Thanks", student);
-            }
-            else
-            {
-                return View();
-            }
-        }
-        public IActionResult StudentList()
-        {
-            return View(Repository.GetStudents());
-        }
+        //[HttpPost]
+        //public IActionResult Register(Student student)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Repository.AddStudent(student);
+        //        return View("Thanks", student);
+        //    }
+        //    else
+        //    {
+        //        return View();
+        //    }
+        //}
+        //public IActionResult StudentList()
+        //{
+        //    return View(Repository.GetStudents());
+        //}
         public IActionResult ProductList()
         {
             List<String> lstResult = new List<string>();
