@@ -121,7 +121,6 @@ H:\C#\web\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\sni.dll
 H:\C#\web\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 H:\C#\web\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 H:\C#\web\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-H:\C#\web\obj\Debug\netcoreapp3.0\web.MvcApplicationPartsAssemblyInfo.cache
 H:\C#\web\obj\Debug\netcoreapp3.0\Razor\Views\Home\myView.cshtml.g.cs
 H:\C#\web\obj\Debug\netcoreapp3.0\Razor\Views\Home\Register.cshtml.g.cs
 H:\C#\web\obj\Debug\netcoreapp3.0\Razor\Views\Home\Thanks.cshtml.g.cs
@@ -133,3 +132,8 @@ H:\C#\web\obj\Debug\netcoreapp3.0\Razor\Views\Home\Contact.cshtml.g.cs
 H:\C#\web\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
 H:\C#\web\obj\Debug\netcoreapp3.0\Razor\Views\Home\Details.cshtml.g.cs
 H:\C#\web\obj\Debug\netcoreapp3.0\Razor\Views\Home\WatchMovie.cshtml.g.cs
+H:\C#\web\bin\Debug\netcoreapp3.0\Npgsql.dll
+H:\C#\web\bin\Debug\netcoreapp3.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+H:\C#\web\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+H:\C#\web\bin\Debug\netcoreapp3.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+H:\C#\web\obj\Debug\netcoreapp3.0\web.MvcApplicationPartsAssemblyInfo.cache

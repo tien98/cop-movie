@@ -17,37 +17,34 @@ namespace web.Controllers
         {
             _logger = logger;
         }
-        CategoryContext db = new CategoryContext();
 
         public IActionResult Index()
         {
-            List<Category> cg = db.Categories.ToList();
-            return View(cg);
+            return View();
         }
         public IActionResult News()
         {
-            List<Category> cg = db.Categories.ToList();
-            return View(cg);
+            
+            return View();
         }
         public IActionResult About()
-        {
-            List<Category> cg = db.Categories.ToList();
-            return View(cg);
+        {  
+            return View();
         }
         public IActionResult Contact()
         {
-            List<Category> cg = db.Categories.ToList();
-            return View(cg);
+          
+            return View();
         }
         public IActionResult Details()
         {
-            List<Category> cg = db.Categories.ToList();
-            return View(cg);
+           
+            return View();
         }
         public IActionResult WatchMovie()
         {
-            List<Category> cg = db.Categories.ToList();
-            return View(cg);
+            
+            return View();
         }
         public ViewResult Index2()
         {

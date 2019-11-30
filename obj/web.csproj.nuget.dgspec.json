@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "h:\\C#\\web\\web.csproj": {}
+    "H:\\C#\\web\\web.csproj": {}
   },
   "projects": {
-    "h:\\C#\\web\\web.csproj": {
+    "H:\\C#\\web\\web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "h:\\C#\\web\\web.csproj",
+        "projectUniqueName": "H:\\C#\\web\\web.csproj",
         "projectName": "web",
-        "projectPath": "h:\\C#\\web\\web.csproj",
+        "projectPath": "H:\\C#\\web\\web.csproj",
         "packagesPath": "C:\\Users\\MACBOOK\\.nuget\\packages\\",
-        "outputPath": "h:\\C#\\web\\obj\\",
+        "outputPath": "H:\\C#\\web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MACBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,6 +55,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             }
           },
           "imports": [

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Category>
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,16 +43,14 @@
             <!-- Sub-menu -->
             <div id="sub-navigation">
                 <ul>
-                    @foreach (var item in Model)
-                    {
                     <li>
-                        <a href="#">@item.name</a>
+                        <a href="#">The Loai</a>
                         <ul class="sub-menu">
                             <li><a href="#">Kinh Dị</a></li>
                             <li><a href="#">Hài Hước</a></li>
                         </ul>
                     </li>
-                    }
+         
                 </ul>
                 <div id="search">
                     <form action="home_submit" method="get" accept-charset="utf-8">
