@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var detail = ViewData["detail"] as IEnumerable<Movies>;
 }
 <br />
 <body>
@@ -11,52 +12,58 @@
             <div class="box">
                 <div class="row">
                     <div class="col-md-8">
-                        <h3>XEM PHIM/PHIM HÀNH ĐỘNG/PHIM CHÍNH KỊCH/X-MAN</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <!-- Movie -->
-                                <div style="width:100%; height:400px">
-                                    <div class="movie" style="width:100%; height:100%;">
-                                        <div class="movie-image" style="width:100%; height:100%">
-                                            <a asp-action="WatchMovie" style="width:100%; height:100%">
-                                                <span class="play"
-                                                      style="width:100%;
-                                        height:100%;
-                                        background-position:center;
-                                        padding-top:120px;
-                                        background-repeat:no-repeat;
-                                        background-size:cover;">
-                                                    <span class="name">
-                                                        X-MAN
+                        @foreach (var item in detail)
+                        {
+                            @*<h3>XEM PHIM/PHIM HÀNH ĐỘNG/PHIM CHÍNH KỊCH/X-MAN</h3>*@
+                            <h3>@item.mov_title</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- Movie -->
+                                    <div style="width:100%; height:400px">
+                                        <div class="movie" style="width:100%; height:100%;">
+                                            <div class="movie-image" style="width:100%; height:100%">
+                                                <a asp-action="WatchMovie" style="width:100%; height:100%">
+                                                    <span class="play"
+                                                          style="width:100%;
+                                                            height:100%;
+                                                            background-position:center;
+                                                            padding-top:120px;
+                                                            background-repeat:no-repeat;
+                                                            background-size:cover;">
+                                                        <span class="name">
+                                                            @item.mov_title
+                                                        </span>
                                                     </span>
-                                                </span>
-                                                <img style="width:100%; height:100%" src="~/Images/movie1.jpg" alt="movie" />
-                                            </a>
-                                        </div>
-                                        <div class="rating">
-                                            <p>RATING</p>
-                                            <div class="stars">
-                                                <div class="stars-in">
-                                                </div>
+                                                    <img style="width:100%; height:100%" src="~/Images/@item.mov_img" alt="movie" />
+                                                </a>
+                                                <button disabled class="btn btn-danger btn-sm float-right mr-3 mt-2">Xem  phim</button>
                                             </div>
-                                            <span class="comments">12</span>
+                                            <div class="rating">
+                                                <p>RATING</p>
+                                                <div class="stars">
+                                                    <div class="stars-in">
+                                                    </div>
+                                                </div>
+                                                <span class="comments">12</span>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!-- end Movie -->
                                 </div>
-                                <!-- end Movie -->
+                                <div class="col-md-4">
+                                    <h4 class="text-warning">@item.mov_title</h4>
+                                    <p><strong>Năm:</strong>@item.mov_year</p>
+                                    <p><strong>Thời lượng: </strong>@item.mov_time phút</p>
+                                    <p><strong>Chất lượng:</strong> Bản Đẹp</p>
+                                    <p><strong> Độ phân giải: </strong>Full HD</p>
+                                    <p><strong>Ngôn ngữ: </strong>Phụ Đề Việt</p>
+                                    <p><strong> Thể loại: </strong>Phim hành động, Phim chính kịch - Drama, Phim Hồi Hộp - Gây Cấn, Phim Viễn Tưởng</p>
+                                    <p><strong> Nhà sản xuất: </strong>Fosun Group Forever Pictures, Jerry Bruckheimer Films, Skydance Media</p>
+                                    <p><strong> Quốc gia: </strong>@item.mov_country</p>
+                                    <p><strong>Lượt xem: </strong>6807</p>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <h1 class="text-warning">X-MAN</h1>
-                                <p><strong>Năm:</strong> 2019</p>
-                                <p><strong>Thời lượng: </strong>90 phút</p>
-                                <p><strong>Chất lượng:</strong> Bản Đẹp</p>
-                                <p><strong> Độ phân giải: </strong>Full HD</p>
-                                <p><strong>Ngôn ngữ: </strong>Phụ Đề Việt</p>
-                                <p><strong> Thể loại: </strong>Phim hành động, Phim chính kịch - Drama, Phim Hồi Hộp - Gây Cấn, Phim Viễn Tưởng</p>
-                                <p><strong> Nhà sản xuất: </strong>Fosun Group Forever Pictures, Jerry Bruckheimer Films, Skydance Media</p>
-                                <p><strong>Lượt xem: </strong>6807</p>
-                            </div>
-                        </div>
+                            }
                     </div>
                     <div class="col-md-4">
                         <h3>PHIM HOT TRONG TUẦN</h3>

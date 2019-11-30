@@ -12,6 +12,7 @@ namespace web.Controllers
 {
     public class HomeController : Controller
     {
+        
         //private IGenress genRepo;
         private readonly WebContext _context;
         public HomeController(WebContext context)
@@ -32,34 +33,133 @@ namespace web.Controllers
             var list_genres4 = from e in _context.Genresses
                                where e.gen_cate == 4
                                select e;
+            var lstMovie = from e in _context.Movies
+                               select e;
             ViewData["theloai"] = list_genres1;
             ViewData["quocgia"] = list_genres2;
             ViewData["phimle"] = list_genres3;
-            ViewData["phimbo"] = list_genres4; 
+            ViewData["phimbo"] = list_genres4;
+            ViewData["lastest"] = lstMovie;
             return View();
         }
         public IActionResult News()
         {
-            
+            var list_genres1 = from e in _context.Genresses
+                               where e.gen_cate == 1
+                               select e;
+            var list_genres2 = from e in _context.Genresses
+                               where e.gen_cate == 2
+                               select e;
+            var list_genres3 = from e in _context.Genresses
+                               where e.gen_cate == 3
+                               select e;
+            var list_genres4 = from e in _context.Genresses
+                               where e.gen_cate == 4
+                               select e;
+            var lstMovie = from e in _context.Movies
+                           select e;
+            ViewData["theloai"] = list_genres1;
+            ViewData["quocgia"] = list_genres2;
+            ViewData["phimle"] = list_genres3;
+            ViewData["phimbo"] = list_genres4;
+            ViewData["lastest"] = lstMovie;
             return View();
         }
         public IActionResult About()
-        {  
+        {
+            var list_genres1 = from e in _context.Genresses
+                               where e.gen_cate == 1
+                               select e;
+            var list_genres2 = from e in _context.Genresses
+                               where e.gen_cate == 2
+                               select e;
+            var list_genres3 = from e in _context.Genresses
+                               where e.gen_cate == 3
+                               select e;
+            var list_genres4 = from e in _context.Genresses
+                               where e.gen_cate == 4
+                               select e;
+            var lstMovie = from e in _context.Movies
+                           select e;
+            ViewData["theloai"] = list_genres1;
+            ViewData["quocgia"] = list_genres2;
+            ViewData["phimle"] = list_genres3;
+            ViewData["phimbo"] = list_genres4;
+            ViewData["lastest"] = lstMovie;
             return View();
         }
         public IActionResult Contact()
         {
-          
+            var list_genres1 = from e in _context.Genresses
+                               where e.gen_cate == 1
+                               select e;
+            var list_genres2 = from e in _context.Genresses
+                               where e.gen_cate == 2
+                               select e;
+            var list_genres3 = from e in _context.Genresses
+                               where e.gen_cate == 3
+                               select e;
+            var list_genres4 = from e in _context.Genresses
+                               where e.gen_cate == 4
+                               select e;
+            var lstMovie = from e in _context.Movies
+                           select e;
+            ViewData["theloai"] = list_genres1;
+            ViewData["quocgia"] = list_genres2;
+            ViewData["phimle"] = list_genres3;
+            ViewData["phimbo"] = list_genres4;
+            ViewData["lastest"] = lstMovie;
             return View();
         }
-        public IActionResult Details()
+        [Route("{controller}/{action}/{id?}")]
+        public IActionResult Details(int id)
         {
-           
+            var list_genres1 = from e in _context.Genresses
+                               where e.gen_cate == 1
+                               select e;
+            var list_genres2 = from e in _context.Genresses
+                               where e.gen_cate == 2
+                               select e;
+            var list_genres3 = from e in _context.Genresses
+                               where e.gen_cate == 3
+                               select e;
+            var list_genres4 = from e in _context.Genresses
+                               where e.gen_cate == 4
+                               select e;
+            var lstMovie = from e in _context.Movies
+                           select e;
+            ViewData["theloai"] = list_genres1;
+            ViewData["quocgia"] = list_genres2;
+            ViewData["phimle"] = list_genres3;
+            ViewData["phimbo"] = list_genres4;
+            ViewData["lastest"] = lstMovie;
+            var detail = from e in _context.Movies
+                         where e.mov_id == id
+                         select e;
+            ViewData["detail"] = detail;
             return View();
         }
         public IActionResult WatchMovie()
         {
-            
+            var list_genres1 = from e in _context.Genresses
+                               where e.gen_cate == 1
+                               select e;
+            var list_genres2 = from e in _context.Genresses
+                               where e.gen_cate == 2
+                               select e;
+            var list_genres3 = from e in _context.Genresses
+                               where e.gen_cate == 3
+                               select e;
+            var list_genres4 = from e in _context.Genresses
+                               where e.gen_cate == 4
+                               select e;
+            var lstMovie = from e in _context.Movies
+                           select e;
+            ViewData["theloai"] = list_genres1;
+            ViewData["quocgia"] = list_genres2;
+            ViewData["phimle"] = list_genres3;
+            ViewData["phimbo"] = list_genres4;
+            ViewData["lastest"] = lstMovie;
             return View();
         }
         public ViewResult Index2()
