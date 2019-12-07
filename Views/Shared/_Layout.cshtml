@@ -53,8 +53,8 @@
                         <a href="#">Thể Loại</a>
                         <ul class="sub-menu">
                             @foreach (var item in theloai)
-                            {
-                                <li><a href="#">@item.gen_title</a></li>
+                            { 
+                                <li><a asp-area="" name="searchString" asp-controller="Home" asp-action="Search" asp-route-id=@item.gen_title>@item.gen_title</a></li>
                             }
                         </ul>
                     </li>
@@ -90,9 +90,9 @@
                     </li>
                 </ul>
                 <div id="search">
-                    <form action="home_submit" method="get" accept-charset="utf-8">
+                    <form asp-controller="Home" asp-action="Search">
                         <label for="search-field">SEARCH</label>
-                        <input type="text" name="search field" value="Enter search here" id="search-field" title="Enter search here" class="blink search-field" />
+                        <input type="text" name="SearchString" placeholder="Enter search here" id="search-field" title="Enter search here" class="blink search-field" />
                         <input type="submit" value="GO!" class="search-button" />
                     </form>
                 </div>

@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using web.Models;
-using web.Repository;
+using web.Services;
 
 namespace web.Controllers
 {
@@ -15,11 +15,12 @@ namespace web.Controllers
         
         //private IGenress genRepo;
         private readonly WebContext _context;
+
         public HomeController(WebContext context)
         {
             this._context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
             var list_genres1 = from e in _context.Genresses
                               where e.gen_cate == 1
@@ -33,15 +34,22 @@ namespace web.Controllers
             var list_genres4 = from e in _context.Genresses
                                where e.gen_cate == 4
                                select e;
-            var lstMovie = from e in _context.Movies
-                               select e;
+            //var lstMovie = from e in _context.Movies
+            //                   select e;
             ViewData["theloai"] = list_genres1;
             ViewData["quocgia"] = list_genres2;
             ViewData["phimle"] = list_genres3;
             ViewData["phimbo"] = list_genres4;
-            ViewData["lastest"] = lstMovie;
-            return View();
+            //ViewData["lastest"] = lstMovie;
+
+            // static function can call directly here
+            string x = VietnameseConverter.Class1.RemoveVietnameseSigns("Đây là bát test của m!!");
+            var dataPage = _context.Movies.GetPaged(page, 18);
+            ViewData["lastest"] = dataPage.Result;
+            return View(dataPage);
         }
+
+
         public IActionResult News()
         {
             var list_genres1 = from e in _context.Genresses
@@ -128,6 +136,7 @@ namespace web.Controllers
                                select e;
             var lstMovie = from e in _context.Movies
                            select e;
+
             ViewData["theloai"] = list_genres1;
             ViewData["quocgia"] = list_genres2;
             ViewData["phimle"] = list_genres3;
@@ -139,7 +148,51 @@ namespace web.Controllers
             ViewData["detail"] = detail;
             return View();
         }
-        public IActionResult WatchMovie()
+
+        public async Task<IActionResult> Search(string? searchString)
+        {
+            var list_genres1 = from e in _context.Genresses
+                               where e.gen_cate == 1
+                               select e;
+            var list_genres2 = from e in _context.Genresses
+                               where e.gen_cate == 2
+                               select e;
+            var list_genres3 = from e in _context.Genresses
+                               where e.gen_cate == 3
+                               select e;
+            var list_genres4 = from e in _context.Genresses
+                               where e.gen_cate == 4
+                               select e;
+            //var lstMovie = from e in _context.Movies
+            //                   select e;
+            ViewData["theloai"] = list_genres1;
+            ViewData["quocgia"] = list_genres2;
+            ViewData["phimle"] = list_genres3;
+            ViewData["phimbo"] = list_genres4;
+            var movies = from m in _context.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.mov_title.ToLower().Contains(searchString.ToLower()));
+            }
+
+            ViewData["search"] = movies;
+
+            return View();
+        }
+
+        [Route("{controller}/test")]
+        public IActionResult Index1(int page = 1)
+        {
+            
+            var dataPage = _context.Movies.GetPaged(page, 10);
+            ViewData["detail"] = dataPage;
+            return View();
+        }
+
+        [Route("{controller}/{action}/{id?}")]
+        public IActionResult WatchMovie(int id)
         {
             var list_genres1 = from e in _context.Genresses
                                where e.gen_cate == 1
@@ -160,12 +213,17 @@ namespace web.Controllers
             ViewData["phimle"] = list_genres3;
             ViewData["phimbo"] = list_genres4;
             ViewData["lastest"] = lstMovie;
+
+            var detail = from e in _context.Movies
+                         where e.mov_id == id
+                         select e;
+            ViewData["detail"] = detail;
             return View();
         }
         public ViewResult Index2()
         {
             int Hour = DateTime.Now.Hour;
-            ViewBag.Name = "tien";
+            ViewBag.Name = "Quan";
             ViewBag.Greeting = Hour > 12 ? "Chao buoi sang" : "Chao buoi chieu";
             return View("myView");
         }
@@ -192,7 +250,7 @@ namespace web.Controllers
         //}
         public IActionResult ProductList()
         {
-            List<String> lstResult = new List<string>();
+            List<string> lstResult = new List<string>();
             Product[] products = Product.GetProducts();
             foreach(Product p in products)
             {

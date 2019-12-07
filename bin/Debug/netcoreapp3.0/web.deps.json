@@ -10,7 +10,7 @@
       "NETCOREAPP",
       "NETCOREAPP3_0"
     ],
-    "languageVersion": "",
+    "languageVersion": "preview",
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
@@ -30,6 +30,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "3.0.1",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0",
+          "VietnameseConverter": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.0.0.0",
@@ -2073,6 +2074,20 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "VietnameseConverter/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.4/VietnameseConverter.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.4/VietnameseConverter.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.0.0.0": {
@@ -4866,6 +4881,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "VietnameseConverter/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PewZ0457IT4SKaeyA7ZjKszUo8sMtFJ7hTzFLpvkAOPa046kbBqXOk4hsemqgoD7B7m43OrM348ovZM7yL583g==",
+      "path": "vietnameseconverter/1.0.0",
+      "hashPath": "vietnameseconverter.1.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/3.0.0.0": {
       "type": "referenceassembly",

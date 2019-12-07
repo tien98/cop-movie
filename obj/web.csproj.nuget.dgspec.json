@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\C#\\web\\web.csproj": {}
+    "E:\\COP\\cop-movie\\web.csproj": {}
   },
   "projects": {
-    "H:\\C#\\web\\web.csproj": {
+    "E:\\COP\\cop-movie\\web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\C#\\web\\web.csproj",
+        "projectUniqueName": "E:\\COP\\cop-movie\\web.csproj",
         "projectName": "web",
-        "projectPath": "H:\\C#\\web\\web.csproj",
-        "packagesPath": "C:\\Users\\MACBOOK\\.nuget\\packages\\",
-        "outputPath": "H:\\C#\\web\\obj\\",
+        "projectPath": "E:\\COP\\cop-movie\\web.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "E:\\COP\\cop-movie\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MACBOOK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\COP\\VietnameseConverter\\bin\\Debug": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,6 +67,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "VietnameseConverter": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
@@ -83,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

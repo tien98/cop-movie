@@ -1,4 +1,5 @@
-﻿@{
+﻿@model web.Services.PagedResult<Movies>
+@{
     ViewData["Title"] = "Home";
     var lastest = ViewData["lastest"] as IEnumerable<Movies>;
 }
@@ -12,23 +13,24 @@
         </div>
         <!-- Movie -->
         @foreach (var item in lastest)
-        {   
-        <div class="movie">
-            <div class="movie-image">
-                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.mov_id"><span class="play"><span class="name">@item.mov_title</span></span><img src="~/Images/@item.mov_img" alt="movie" /></a>
-            </div>
-            <div class="rating">
-                <p>RATING</p>
-                <div class="stars">
-                    <div class="stars-in">
-                    </div>
+        {
+            <div class="movie">
+                <div class="movie-image">
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@item.mov_id"><span class="play"><span class="name">@item.mov_title</span></span><img src="@item.mov_img" alt="movie" /></a>
                 </div>
-                <span class="comments">12</span>
+                <div class="rating">
+                    <p>RATING</p>
+                    <div class="stars">
+                        <div class="stars-in">
+                        </div>
+                    </div>
+                    <span class="comments">12</span>
+                </div>
             </div>
-        </div>
         }
         <!-- end Movie -->
         <div class="cl">&nbsp;</div>
+        @(await Component.InvokeAsync<web.Services.PagerViewComponent>(Model))
     </div>
     <!-- end Box -->
     <!-- Box -->
